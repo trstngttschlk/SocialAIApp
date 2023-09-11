@@ -1,4 +1,4 @@
-# SocialAIApp Read Me
+# SocialAIApp ReadMe
 
 ## 🛠️ Built With
 
