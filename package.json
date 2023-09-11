@@ -1,0 +1,20 @@
+{
+  "name": "social-ai-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "dev-concurrent": "concurrently \"npm:start-client\" \"npm:dev\"",
+    "start-client": "npm --prefix client start",
+    "dev": "npm --prefix server run dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^8.2.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.5.0"
+  }
+}
