@@ -1,27 +1,13 @@
-import PropTypes from "prop-types"
-import deletePostRequest from "../api/deletePostRequest"
-import { useQueryClient, useMutation } from "react-query"
+import { useQuery } from "react-query"
+import readPostRequest from "../api/readPostRequest"
 
-export default function Post({ post }) {
-  const queryClient = useQueryClient()
+export default function Post() {
+  const { isLoading, data: post } = useQuery("post", readPostRequest)
 
-  const { mutate: deletePost } = useMutation(
-    (updatedPost) => deletePostRequest(updatedPost),
-    {
-      onSettled: () => {
-        queryClient.invalidateQueries("posts")
-      },
-    }
-  )
   return (
     <div>
-      <p>{post.caption}</p>
-      <a href={`/posts/${post._id}`}>Link to Post</a>
-      <button onClick={() => deletePost(post)}>delete</button>
+      <h1>Hello</h1>
+      {isLoading ? <div>...loading</div> : <p>{post}</p>}
     </div>
   )
-}
-
-Post.propTypes = {
-  post: PropTypes.object,
 }
