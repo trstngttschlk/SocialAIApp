@@ -1,7 +1,7 @@
 import "./App.css"
 import { useQuery } from "react-query"
-import readFeedPostsRequest from "../api/readFeedPostsRequest"
-import FeedPosts from "../components/FeedPosts"
+import readFeedPostsRequest from "../api/readFeedRequest"
+import Feed from "../components/Feed"
 import CreatePostForm from "../components/CreatePostForm"
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
       {isLoading ? (
         <div>loading ...</div>
       ) : (
-        posts.map((post) => <FeedPosts post={post} key={post._id} />)
+        posts.map((post) => <Feed post={post} key={post._id} />)
       )}
       <CreatePostForm />
     </>

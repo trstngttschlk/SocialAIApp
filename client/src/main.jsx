@@ -10,7 +10,7 @@ const queryClient = new QueryClient()
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/feed",
     element: <App />,
     errorElement: <div>sorry nothing here</div>,
   },

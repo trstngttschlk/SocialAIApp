@@ -11,7 +11,6 @@ module.exports = {
       res.json(newPost)
     } catch (err) {
       console.log(err)
-      res.status(400).json({ error: err })
     }
   },
   readPostRoute: async (req, res) => {
@@ -20,17 +19,16 @@ module.exports = {
       const post = await PostModel.findById(id)
       res.json(post)
     } catch (err) {
-      // console.log(err)
-      res.status(400).json({ error: err })
+      console.log(err)
     }
   },
-  updatePostRoute: async (req, res) => {
-    const { id } = req.params
-    const post = await PostModel.findById(id)
-    post.caption = req.body.caption
-    await post.save()
-    res.json(post)
-  },
+  // updatePostRoute: async (req, res) => {
+  //   const { id } = req.params
+  //   const post = await PostModel.findById(id)
+  //   post.caption = req.body.caption
+  //   await post.save()
+  //   res.json(post)
+  // },
   deletePostRoute: async (req, res) => {
     const { id } = req.params
     const post = await PostModel.findById(id)
