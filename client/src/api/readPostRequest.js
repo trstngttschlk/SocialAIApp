@@ -1,7 +1,7 @@
 import { API_URL } from "./config"
 
 export default () => {
-  return fetch(`${API_URL}/posts/:id`, {
+  return fetch(`${API_URL}/post/:id`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",

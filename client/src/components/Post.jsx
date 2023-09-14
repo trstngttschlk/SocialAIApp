@@ -7,7 +7,7 @@ export default function Post() {
   return (
     <div>
       <h1>Hello</h1>
-      {isLoading ? <div>...loading</div> : <p>{post}</p>}
+      {isLoading ? <div>...loading</div> : <p>{JSON.stringify(post)}</p>}
     </div>
   )
 }

@@ -18,7 +18,7 @@ export default function FeedPosts({ post }) {
   return (
     <div>
       <p>{post.caption}</p>
-      <Link to={`/posts/${post._id}`}>Link to Post</Link>
+      <Link to={`/post/${post._id}`}>Link to Post</Link>
       <button onClick={() => deletePost(post)}>delete</button>
     </div>
   )
