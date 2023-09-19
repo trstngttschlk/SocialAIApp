@@ -5,6 +5,9 @@ export default function Navbar() {
     <nav>
       <ul>
         <li>
+          <Link to="/">Main</Link>
+        </li>
+        <li>
           <Link to="/feed">Feed</Link>
         </li>
         <li>
