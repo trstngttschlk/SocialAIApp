@@ -1,7 +1,7 @@
 import { API_URL } from "./config"
 
 export default (post) => {
-  return fetch(`${API_URL}/posts`, {
+  return fetch(`${API_URL}/post/createPost`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -9,5 +9,5 @@ export default (post) => {
     body: JSON.stringify({
       caption: post.caption,
     }),
-  }).then((response) => response.json())
+  }).then((res) => res.json())
 }

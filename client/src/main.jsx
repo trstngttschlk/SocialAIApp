@@ -1,15 +1,41 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
-import App from "./App.jsx"
 import "./index.css"
 import { QueryClient, QueryClientProvider } from "react-query"
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import Root from "./routes/Root"
+import Feed from "./components/Feed"
+import Post from "./components/Post"
+import CreatePostForm from "./components/CreatePostForm"
 
 const queryClient = new QueryClient()
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    errorElement: <div>sorry nothing here</div>,
+    children: [
+      {
+        path: "feed",
+        element: <Feed />,
+      },
+      {
+        path: "post/:id",
+        element: <Post />,
+      },
+      {
+        path: "post/createpost",
+        element: <CreatePostForm />,
+      },
+    ],
+  },
+])
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <App />
+      <RouterProvider router={router} />
     </QueryClientProvider>
   </React.StrictMode>
 )
