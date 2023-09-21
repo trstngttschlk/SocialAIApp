@@ -1,10 +1,10 @@
 const express = require("express")
 const dotenv = require("dotenv")
 const mongoose = require("mongoose")
-// const router = require("./router")
 const cors = require("cors")
 const mainRoutes = require("./routes/mainRoutes")
 const postRoutes = require("./routes/postRoutes")
+const userRoutes = require("./routes/userRoutes")
 const morgan = require("morgan")
 dotenv.config({ path: "./config/.env" })
 
@@ -16,6 +16,7 @@ app.use(express.json())
 
 app.use("/", mainRoutes)
 app.use("/post", postRoutes)
+app.use("/api/user", userRoutes)
 
 mongoose.connect(process.env.MONGO_URI).then(() => {
   app.listen(process.env.PORT)
