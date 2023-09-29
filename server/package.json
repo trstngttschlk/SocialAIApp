@@ -2,5 +2,9 @@
   "scripts": {
     "start": "node src/server.js",
     "dev": "nodemon src/server.js"
+  },
+  "dependencies": {
+    "nodemon": "^3.0.1",
+    "validator": "^13.11.0"
   }
 }
