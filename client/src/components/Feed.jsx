@@ -1,4 +1,3 @@
-import PropTypes from "prop-types"
 import deletePostRequest from "../api/deletePostRequest"
 import readFeedRequest from "../api/readFeedRequest"
 import { useQuery, useQueryClient, useMutation } from "react-query"
@@ -33,8 +32,4 @@ export default function FeedPosts() {
       )}
     </div>
   )
-}
-
-FeedPosts.propTypes = {
-  post: PropTypes.object,
 }
