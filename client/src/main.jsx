@@ -4,6 +4,7 @@ import "./index.css"
 import { QueryClient, QueryClientProvider } from "react-query"
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 import Root from "./routes/Root"
+import Signup from "./components/Signup"
 import Login from "./components/Login"
 import Feed from "./components/Feed"
 import Post from "./components/Post"
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
     element: <Root />,
     errorElement: <div>sorry nothing here</div>,
     children: [
+      {
+        path: "signup",
+        element: <Signup />,
+      },
       {
         path: "login",
         element: <Login />,
