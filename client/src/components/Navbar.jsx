@@ -5,6 +5,9 @@ export default function Navbar() {
     <nav>
       <ul>
         <li>
+          <Link to="/login">Login</Link>
+        </li>
+        <li>
           <Link to="/">Main</Link>
         </li>
         <li>
