@@ -27,9 +27,7 @@ export default function Signup() {
         onChange={(e) => setPassword(e.target.value)}
         value={password}
       />
-      <button disabled={isLoading} type="submit">
-        Signup
-      </button>
+      <button disabled={isLoading}>Signup</button>
       {error && <div>{error}</div>}
     </form>
   )
